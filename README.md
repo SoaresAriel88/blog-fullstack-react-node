@@ -5,10 +5,10 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-Uma aplicação de blog fullstack moderna, com frontend em **React** e backend em **Node.js**, permitindo criação, edição, visualização e exclusão de posts com upload de imagem.
+Uma aplicação de blog fullstack com frontend em **React** e backend em **Node.js + Express**, utilizando **SQLite** como banco de dados e upload de imagens via **Multer**.
 
 > ⚠️ **Projeto local** — A aplicação roda apenas em ambiente de desenvolvimento local. Não há deploy disponível no momento.
 
@@ -21,7 +21,7 @@ Uma aplicação de blog fullstack moderna, com frontend em **React** e backend e
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
 - [Screenshots](#-screenshots)
-- [Tecnologias](#-tecnologias)
+- [Tecnologias e Dependências](#-tecnologias-e-dependências)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Como Executar](#-como-executar)
 - [Endpoints da API](#-endpoints-da-api)
@@ -32,7 +32,7 @@ Uma aplicação de blog fullstack moderna, com frontend em **React** e backend e
 
 ## 🧾 Sobre o Projeto
 
-O **Blog Fullstack** é uma aplicação web completa para criação e gerenciamento de posts. O projeto foi desenvolvido com arquitetura separada entre frontend e backend, com comunicação via API REST.
+O **Blog Fullstack** é uma aplicação web completa para criação e gerenciamento de posts. Desenvolvido com arquitetura separada entre frontend e backend, com comunicação via API REST usando **Axios**.
 
 Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arquivo). A interface permite buscar, adicionar, editar e deletar posts de forma dinâmica e responsiva.
 
@@ -44,7 +44,7 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 - 🔍 Busca de posts em tempo real
 - ➕ Criação de novos posts com título, corpo e upload de imagem
 - ✏️ Edição de posts existentes via modal
-- 🗑️ Exclusão de posts com botão dedicado
+- 🗑️ Exclusão de posts
 - 📱 Interface responsiva com tema escuro
 
 ---
@@ -56,17 +56,13 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 
 ![Lista de Posts](./screenshots/lista-posts.png)
 
----
-
 ### Modal — Editar Post
 > Formulário para editar título, corpo e imagem de um post existente
 
 ![Editar Post](./screenshots/editar-post.png)
 
----
-
 ### Modal — Adicionar Post
-> Formulário para criação de um novo post com campos de título, body e seleção de imagem
+> Formulário para criação de um novo post com título, body e seleção de imagem
 
 ![Adicionar Post](./screenshots/adicionar-post.png)
 
@@ -75,20 +71,25 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 ## 🛠️ Tecnologias e Dependências
 
 ### Frontend
-| Pacote | Descrição |
-|---|---|
-| `react` | Biblioteca principal para construção da UI |
-| `react-dom` | Renderização do React no navegador |
-| `react-router-dom` | Roteamento client-side |
-| `react-scripts` | Scripts de build e desenvolvimento (CRA) |
+| Pacote | Versão | Descrição |
+|---|---|---|
+| `react` | ^19.2.5 | Biblioteca principal para construção da UI |
+| `react-dom` | ^19.2.5 | Renderização do React no navegador |
+| `react-scripts` | 5.0.1 | Scripts de build e desenvolvimento (CRA) |
+| `axios` | ^1.16.0 | Requisições HTTP para a API |
+| `multer` | ^2.1.1 | Upload de arquivos |
 
 ### Backend
-| Pacote | Descrição |
-|---|---|
-| `express` | Framework para criação da API REST |
-| `nodemon` | Reinicialização automática do servidor em dev |
-| `cors` | Liberação de requisições entre origens diferentes |
-| `multer` | Upload de arquivos (imagens dos posts) |
+| Pacote | Versão | Descrição |
+|---|---|---|
+| `express` | ^5.2.1 | Framework para criação da API REST |
+| `sequelize` | ^6.37.8 | ORM para gerenciamento do banco de dados |
+| `better-sqlite3` | ^12.9.0 | Driver SQLite de alta performance |
+| `sqlite3` | ^6.0.1 | Banco de dados relacional local |
+| `multer` | ^2.1.1 | Upload de imagens dos posts |
+| `cors` | ^2.8.6 | Liberação de requisições entre origens |
+| `dotenv` | ^17.4.2 | Gerenciamento de variáveis de ambiente |
+| `nodemon` | ^3.1.14 | Reinicialização automática em desenvolvimento |
 
 ---
 
@@ -98,21 +99,19 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 blog-fullstack-react-node/
 │
 ├── Backend/                  # Servidor Node.js / Express
-│   ├── routes/               # Definição das rotas da API
+│   ├── routes/               # Rotas da API
 │   ├── controllers/          # Lógica dos endpoints
-│   ├── models/               # Modelos de dados
-│   └── index.js              # Ponto de entrada do servidor
+│   ├── models/               # Modelos Sequelize (SQLite)
+│   ├── uploads/              # Imagens enviadas via Multer
+│   └── app.js                # Ponto de entrada do servidor
 │
 ├── Frontend/                 # Aplicação React
 │   ├── src/
 │   │   ├── components/       # Componentes reutilizáveis
-│   │   ├── pages/            # Páginas da aplicação
-│   │   ├── App.js            # Componente raiz e rotas
+│   │   ├── App.js            # Componente raiz
 │   │   └── index.js          # Ponto de entrada do React
 │   └── public/
 │
-├── public/                   # Assets públicos globais
-├── src/                      # Código-fonte adicional
 ├── .gitignore
 ├── package.json
 └── README.md
@@ -126,7 +125,7 @@ blog-fullstack-react-node/
 
 ```bash
 cd Backend
-npm start
+npm run dev
 ```
 
 ### Frontend
