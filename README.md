@@ -54,17 +54,16 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 ### Lista de Posts
 > Visualização dos posts cadastrados com opções de **Delete** e **Edit Post**
 
-![Lista de Posts](https://elderly-red-vxt8gciznd.edgeone.app/Captura%20de%20tela%202026-05-08%20122347.png)
+<img width="1152" height="663" alt="Image" src="https://github.com/user-attachments/assets/cf7b394e-ff7c-4123-b640-3bba092c36ab" />
+
 
 ### Modal — Editar Post
 > Formulário para editar título, corpo e imagem de um post existente
-
-![Editar Post](./screenshots/editar-post.png)
+<img width="703" height="687" alt="Image" src="https://github.com/user-attachments/assets/d99fdab9-653a-4782-8d47-ab63bbb5edb9" />
 
 ### Modal — Adicionar Post
 > Formulário para criação de um novo post com título, body e seleção de imagem
-
-![Adicionar Post](./screenshots/adicionar-post.png)
+<img width="608" height="482" alt="Image" src="https://github.com/user-attachments/assets/3ccd4a67-b565-4198-9818-46731e944e5a" />
 
 ---
 
