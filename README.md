@@ -54,16 +54,17 @@ Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arq
 ### Lista de Posts
 > Visualização dos posts cadastrados com opções de **Delete** e **Edit Post**
 
-<img width="1152" height="663" alt="Image" src="https://github.com/user-attachments/assets/cf7b394e-ff7c-4123-b640-3bba092c36ab" />
-
+![Lista de Posts](./screenshots/lista-posts.png)
 
 ### Modal — Editar Post
 > Formulário para editar título, corpo e imagem de um post existente
-<img width="703" height="687" alt="Image" src="https://github.com/user-attachments/assets/d99fdab9-653a-4782-8d47-ab63bbb5edb9" />
+
+![Editar Post](./screenshots/editar-post.png)
 
 ### Modal — Adicionar Post
 > Formulário para criação de um novo post com título, body e seleção de imagem
-<img width="608" height="482" alt="Image" src="https://github.com/user-attachments/assets/3ccd4a67-b565-4198-9818-46731e944e5a" />
+
+![Adicionar Post](./screenshots/adicionar-post.png)
 
 ---
 
