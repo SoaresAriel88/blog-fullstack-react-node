@@ -8,7 +8,9 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-Uma aplicação de blog fullstack moderna, com frontend em **React** e backend em **Node.js**, permitindo criação, edição, visualização e exclusão de posts.
+Uma aplicação de blog fullstack moderna, com frontend em **React** e backend em **Node.js**, permitindo criação, edição, visualização e exclusão de posts com upload de imagem.
+
+> ⚠️ **Projeto local** — A aplicação roda apenas em ambiente de desenvolvimento local. Não há deploy disponível no momento.
 
 </div>
 
@@ -18,14 +20,11 @@ Uma aplicação de blog fullstack moderna, com frontend em **React** e backend e
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
+- [Screenshots](#-screenshots)
 - [Tecnologias](#-tecnologias)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Pré-requisitos](#-pré-requisitos)
-- [Instalação e Execução](#-instalação-e-execução)
-- [Variáveis de Ambiente](#-variáveis-de-ambiente)
+- [Como Executar](#-como-executar)
 - [Endpoints da API](#-endpoints-da-api)
-- [Screenshots](#-screenshots)
-- [Contribuição](#-contribuição)
 - [Autor](#-autor)
 - [Licença](#-licença)
 
@@ -33,39 +32,63 @@ Uma aplicação de blog fullstack moderna, com frontend em **React** e backend e
 
 ## 🧾 Sobre o Projeto
 
-O **Blog Fullstack** é uma aplicação web completa que permite a publicação e gerenciamento de posts de blog. O projeto foi desenvolvido com uma arquitetura separada entre frontend e backend, simulando um ambiente de produção real com comunicação via API REST.
+O **Blog Fullstack** é uma aplicação web completa para criação e gerenciamento de posts. O projeto foi desenvolvido com arquitetura separada entre frontend e backend, com comunicação via API REST.
 
-O objetivo principal é demonstrar a integração entre React no lado do cliente e Node.js no servidor, abrangendo as operações CRUD, roteamento, gerenciamento de estado e consumo de API.
+Cada post possui **título**, **corpo de texto** e **imagem** (via upload de arquivo). A interface permite buscar, adicionar, editar e deletar posts de forma dinâmica e responsiva.
 
 ---
 
 ## ✅ Funcionalidades
 
-- 📰 Listagem de todos os posts do blog
-- 🔍 Visualização detalhada de um post individual
-- ✍️ Criação de novos posts
-- ✏️ Edição de posts existentes
-- 🗑️ Exclusão de posts
-- 📱 Interface responsiva e amigável
-- 🔗 Navegação dinâmica com React Router
+- 📰 Listagem de todos os posts com imagem, título e descrição
+- 🔍 Busca de posts em tempo real
+- ➕ Criação de novos posts com título, corpo e upload de imagem
+- ✏️ Edição de posts existentes via modal
+- 🗑️ Exclusão de posts com botão dedicado
+- 📱 Interface responsiva com tema escuro
 
 ---
 
-## 🛠️ Tecnologias
+## 📸 Screenshots
+
+### Lista de Posts
+> Visualização dos posts cadastrados com opções de **Delete** e **Edit Post**
+
+![Lista de Posts](./screenshots/lista-posts.png)
+
+---
+
+### Modal — Editar Post
+> Formulário para editar título, corpo e imagem de um post existente
+
+![Editar Post](./screenshots/editar-post.png)
+
+---
+
+### Modal — Adicionar Post
+> Formulário para criação de um novo post com campos de título, body e seleção de imagem
+
+![Adicionar Post](./screenshots/adicionar-post.png)
+
+---
+
+## 🛠️ Tecnologias e Dependências
 
 ### Frontend
-| Tecnologia | Versão | Descrição |
-|---|---|---|
-| React | ^18.x | Biblioteca para construção da interface |
-| React Router DOM | ^6.x | Roteamento client-side |
-| CSS3 | — | Estilização dos componentes |
+| Pacote | Descrição |
+|---|---|
+| `react` | Biblioteca principal para construção da UI |
+| `react-dom` | Renderização do React no navegador |
+| `react-router-dom` | Roteamento client-side |
+| `react-scripts` | Scripts de build e desenvolvimento (CRA) |
 
 ### Backend
-| Tecnologia | Versão | Descrição |
-|---|---|---|
-| Node.js | ^18.x | Runtime JavaScript server-side |
-| Express.js | ^4.x | Framework para criação da API REST |
-| Nodemon | — | Reinicialização automática do servidor |
+| Pacote | Descrição |
+|---|---|
+| `express` | Framework para criação da API REST |
+| `nodemon` | Reinicialização automática do servidor em dev |
+| `cors` | Liberação de requisições entre origens diferentes |
+| `multer` | Upload de arquivos (imagens dos posts) |
 
 ---
 
@@ -76,7 +99,7 @@ blog-fullstack-react-node/
 │
 ├── Backend/                  # Servidor Node.js / Express
 │   ├── routes/               # Definição das rotas da API
-│   ├── controllers/          # Lógica de negócio dos endpoints
+│   ├── controllers/          # Lógica dos endpoints
 │   ├── models/               # Modelos de dados
 │   └── index.js              # Ponto de entrada do servidor
 │
@@ -86,7 +109,7 @@ blog-fullstack-react-node/
 │   │   ├── pages/            # Páginas da aplicação
 │   │   ├── App.js            # Componente raiz e rotas
 │   │   └── index.js          # Ponto de entrada do React
-│   └── public/               # Arquivos públicos estáticos
+│   └── public/
 │
 ├── public/                   # Assets públicos globais
 ├── src/                      # Código-fonte adicional
@@ -97,68 +120,25 @@ blog-fullstack-react-node/
 
 ---
 
-## ⚙️ Pré-requisitos
+## ▶️ Como Executar
 
-Antes de começar, certifique-se de ter instalado em sua máquina:
-
-- [Node.js](https://nodejs.org/) (v16 ou superior)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-- [Git](https://git-scm.com/)
-
----
-
-## 🚀 Instalação e Execução
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/SoaresAriel88/blog-fullstack-react-node.git
-cd blog-fullstack-react-node
-```
-
-### 2. Configurar e executar o Backend
+### Backend
 
 ```bash
 cd Backend
-npm install
 npm start
 ```
 
-> O servidor estará disponível em: `http://localhost:5000`
-
-### 3. Configurar e executar o Frontend
-
-Abra um **novo terminal** na raiz do projeto:
+### Frontend
 
 ```bash
 cd Frontend
-npm install
 npm start
 ```
-
-> A aplicação estará disponível em: `http://localhost:3000`
-
----
-
-## 🔐 Variáveis de Ambiente
-
-Crie um arquivo `.env` dentro da pasta `Backend/` com as seguintes variáveis:
-
-```env
-PORT=5000
-DB_HOST=localhost
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-DB_NAME=blog_db
-```
-
-> ⚠️ Nunca commite o arquivo `.env`. Ele já está listado no `.gitignore`.
 
 ---
 
 ## 📡 Endpoints da API
-
-Base URL: `http://localhost:5000/api`
 
 | Método | Rota | Descrição |
 |---|---|---|
@@ -167,33 +147,6 @@ Base URL: `http://localhost:5000/api`
 | `POST` | `/posts` | Cria um novo post |
 | `PUT` | `/posts/:id` | Atualiza um post existente |
 | `DELETE` | `/posts/:id` | Remove um post |
-
----
-
-## 📸 Screenshots
-
-> *(Em breve — adicione capturas de tela da aplicação aqui)*
-
----
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Siga os passos abaixo:
-
-1. Faça um **fork** do projeto
-2. Crie uma branch para sua feature:
-   ```bash
-   git checkout -b feature/minha-feature
-   ```
-3. Commit suas mudanças:
-   ```bash
-   git commit -m "feat: adiciona minha feature"
-   ```
-4. Faça o push para a branch:
-   ```bash
-   git push origin feature/minha-feature
-   ```
-5. Abra um **Pull Request**
 
 ---
 
