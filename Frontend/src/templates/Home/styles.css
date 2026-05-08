@@ -1,0 +1,79 @@
+/* CONTAINER PRINCIPAL */
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #12121a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SEARCH */
+.search-container {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  background: #1e1e2f;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.search-container h1 {
+  font-size: 16px;
+  color: #cfcfe8;
+  margin-bottom: 10px;
+}
+
+/* INPUT DE BUSCA (caso esteja no SearchPostCard) */
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a40;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.search-container input:focus {
+  box-shadow: 0 0 0 2px #6c63ff;
+}
+
+/* LISTA DE POSTS */
+.posts {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* MENSAGEM SEM POSTS */
+.container p {
+  color: #aaa;
+  margin-top: 20px;
+}
+
+/* ÁREA DO ADD POST */
+.container-addPost {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVO */
+@media (min-width: 768px) {
+  .posts {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .container-addPost {
+    max-width: 500px;
+  }
+
+  .search-container {
+    max-width: 500px;
+  }
+}

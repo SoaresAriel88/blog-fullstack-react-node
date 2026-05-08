@@ -1,0 +1,66 @@
+.post {
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 12px;
+  background: #1e1e2f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.post-content h1 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+
+.post-content p {
+  font-size: 14px;
+  color: #cfcfe8;
+  margin: 0;
+}
+
+/* BOTÕES */
+.post button {
+  margin: 10px 15px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* botão excluir */
+.removeButton {
+  background: #ff4d4d;
+  color: white;
+}
+
+.removeButton:hover {
+  background: #e63939;
+}
+
+/* botão editar */
+.editButton {
+  background: #6c63ff;
+  color: white;
+}
+
+.editButton:hover {
+  background: #574fd6;
+}

@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Post 1",
+      "body": "Conteúdo 1",
+      "cover": "https://picsum.photos/300/200"
+    },
+    {
+      "id": "2",
+      "title": "Post 2",
+      "body": "Conteúdo 2",
+      "cover": "https://picsum.photos/300/200"
+    },
+
+    {
+      "id": "3",
+      "title": "Post 3",
+      "body": "Conteúdo 3",
+      "cover": "https://picsum.photos/300/200"
+    }
+  ]
+}

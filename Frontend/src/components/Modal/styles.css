@@ -1,0 +1,96 @@
+.modal-background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0, 0.7);
+    z-index: 1000;
+}
+
+.modal-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    width: 400px;
+    background-color: #1e1e2f;
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    color: #cfcfe8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    outline: none;
+    background: #2a2a40;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+form input::placeholder{
+    color: #8f8fa3;
+}
+
+form input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.editButton {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #6c63ff;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.editButton:hover {
+    background: #574fd6;
+    transform: translateY(-1px);
+}
+
+.editButton:disabled {
+    background: #444;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.buttonClose-Modal{
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #2f2f46;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buttonClose-Modal:hover{
+    background: #44445f;
+}

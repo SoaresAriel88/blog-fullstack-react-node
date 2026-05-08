@@ -1,0 +1,53 @@
+.add-Post {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #1e1e2f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-Post label {
+  color: #cfcfe8;
+  font-size: 14px;
+}
+
+.add-Post input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a40;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.add-Post input:focus {
+  box-shadow: 0 0 0 2px #6c63ff;
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #6c63ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.addButton:hover {
+  background: #574fd6;
+}
+
+.addButton:disabled {
+  background: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
